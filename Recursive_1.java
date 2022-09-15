@@ -50,12 +50,25 @@ public class Recursive_1 {
 		}
 		return result;
 	}
+	public int gcdWithLoop(int x, int y){
+//		int result = 0;
+		int nx = 0;
+		while (y > 0){
+			System.out.println("x = " + x + " y = " + y);
+			nx = y;//6  2
+			y = x%y;//2   6
+			x = nx;//6 2
+		}
+		return nx;
+
+	}
 
 	public static void main(String[] args) {
 		Recursive_1 recursive_1 = new Recursive_1();
 //		System.out.println(recursive_1.factorial(4));
 
 //		System.out.println(recursive_1.gcd(8, 6));
-		System.out.println(recursive_1.factorialWithLoop(4));
+//		System.out.println(recursive_1.factorialWithLoop(4));
+		System.out.println(recursive_1.gcdWithLoop(8, 6));
 	}
 }
