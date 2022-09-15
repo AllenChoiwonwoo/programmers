@@ -11,7 +11,7 @@ function makeDateClick() {
         console.log('try again after 50');
         setTimeout(() =>{
             makeDateClick()
-        }, 50);
+        }, 100);
     }
 }
 
@@ -22,26 +22,27 @@ function makeBookingClk() {
         setTimeout(() => {
             console.log('clk booking');
             document.getElementById('ticketReservation_Btn').click();
-        }, 150);
+        }, 300);
     }else{
         console.log('book try again');
         setTimeout(() => {
             makeBookingClk();
-        }, 30)
+        }, 100)
     }
 }
 
 
 
 
-var targetTime = new Date('2022-08-08 20:00:00:500');
+var targetTime = new Date('2022-09-14 20:00:00:100');
 function checkTime(targetTime) {
     if (Date.now() > targetTime){
         makeDateClick();
     }else{
+        console.log('아직');
         setTimeout(() => {
             checkTime(targetTime);
-        }, 80);
+        }, 100);
     }
 }
 checkTime(targetTime);
