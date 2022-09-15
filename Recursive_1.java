@@ -43,10 +43,19 @@ public class Recursive_1 {
 		}
 	}
 
+	public int factorialWithLoop(int val){
+		int result = 1;
+		for (int i = val; i > 0; i--) {
+			result *= i;
+		}
+		return result;
+	}
+
 	public static void main(String[] args) {
 		Recursive_1 recursive_1 = new Recursive_1();
 //		System.out.println(recursive_1.factorial(4));
 
-		System.out.println(recursive_1.gcd(8, 6));
+//		System.out.println(recursive_1.gcd(8, 6));
+		System.out.println(recursive_1.factorialWithLoop(4));
 	}
 }
