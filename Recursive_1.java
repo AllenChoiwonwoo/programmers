@@ -11,6 +11,8 @@
  * @since 지원하는 자바버전 (ex : 5+ 5이상)
  */
 
+import java.sql.Array;
+
 /**
  * create on 2022/09/15.
  * create by IntelliJ IDEA.
@@ -63,6 +65,24 @@ public class Recursive_1 {
 
 	}
 
+	// 14의 소인수분해한 값을 배열로 변환하라
+
+
+
+	public int gcd(int[] intArr){
+//		List<Integer> myList
+
+		//2부터 쭉해보기?
+		int divider = 2;
+		for (int i = 0; i < intArr.length; i++) {
+			if (intArr[i]%divider != 0){
+				divider++;
+			}
+		}
+		return 0;
+
+	}
+
 	public static void main(String[] args) {
 		Recursive_1 recursive_1 = new Recursive_1();
 //		System.out.println(recursive_1.factorial(4));
@@ -70,5 +90,7 @@ public class Recursive_1 {
 //		System.out.println(recursive_1.gcd(8, 6));
 //		System.out.println(recursive_1.factorialWithLoop(4));
 		System.out.println(recursive_1.gcdWithLoop(8, 6));
+				System.out.println(recursive_1.gcd(new int[]{20,16,8}));
+//
 	}
 }
