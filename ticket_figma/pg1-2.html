@@ -701,7 +701,7 @@
                         background: #f5d0a9;
                     }
                     .set_gray{
-                        background: #f2f2f2;
+                        background: #b8b8b8;
                     }
                     .set_userSelect{
                         background: #ff0000;
@@ -770,6 +770,53 @@
                         }
                     }
                     drawSets();
+                    // 0~23 이 담긴 배열에서 랜덤으로 3개의 값을 출력
+
+
+                    var intervalFArr = [];
+                    var cnt = 0;
+                    var botSelectRows = Array.from(Array(22), () => Array(23).fill(-1));
+                    function goAutoSelected(trRow, idx) {
+                        //0 부터 22 사이의 랜덤 정수 3개 추출
+                        // console.log('goAutoSelected ');
+                        var randomArr = botSelectRows[idx];
+                        for (let i = 0; i < 3; i++) {
+                            var randomVal = Math.floor(Math.random() * 23);
+                            // console.log('randomVal ', randomVal);
+                            if (randomArr.indexOf(randomVal) == -1) {
+                                randomArr[randomVal] = randomVal;
+                                var tdArr = trRow.getElementsByTagName('td')
+                                if (tdArr[randomVal] && tdArr[randomVal].className != 'set_gray' && tdArr[randomVal].className != 'set_userSelect') {
+                                    tdArr[randomVal].className = 'set_gray';
+                                }
+                                // console.log('randomArr ',randomArr);
+                            } else {
+                                // i--;
+                            }
+
+                        }
+                        if (randomArr.indexOf(-1) == -1) {
+                            console.log('clearInterval ',idx);
+                            clearInterval(intervalFArr[idx]);
+                            return;
+                        }
+                        // if (cnt++ > 30){
+                        //     console.log('clearInterval');
+                        //     clearInterval(intervalF);
+                        //     return;
+                        // }
+                        // console.log(' ########## cnt = ',cnt);
+                    }
+                    function startSelectBot() {
+                        var seatTable = document.getElementById('seatTable');
+                        var trArr = seatTable.getElementsByTagName('tr');
+                        for (let i = 0; i < 22; i++) {
+                            // console.log('startSelectBot');
+                            // setTimeout(goAutoSelected, 500, trArr[i], i, 500);
+                            intervalFArr.push(setInterval(goAutoSelected, 100+(i*10), trArr[i], i));
+                        }
+                    }
+
                 </script>
         </div>
     </div>

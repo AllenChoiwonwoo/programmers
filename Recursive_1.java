@@ -39,6 +39,7 @@ public class Recursive_1 {
 	public int gcd(int x, int y) {
 		System.out.println("x = " + x + " y = " + y);
 		if (y == 0) {
+			System.out.println("!Recursive_1:42 = " +x);
 			return x;
 		} else {
 			return gcd(y, x % y);
@@ -82,6 +83,16 @@ public class Recursive_1 {
 		return 0;
 
 	}
+	public int gcdArray(int[] a,int start,int no){
+		if(no == 1){
+			return a[start]; // 배열 요소가 하나일 때 해당 값 반환
+		} else if(no == 2){
+			return gcd(a[start] , a[start+1]); // 비교 대상이 두 개일 경우, 처음 요소와 그 다음 요소의 최대 공약수를 구해서 반환
+		} else {
+			return gcd(a[start] , gcdArray(a,start+1,no-1));
+		}
+
+	}
 
 	public static void main(String[] args) {
 		Recursive_1 recursive_1 = new Recursive_1();
@@ -89,8 +100,9 @@ public class Recursive_1 {
 
 //		System.out.println(recursive_1.gcd(8, 6));
 //		System.out.println(recursive_1.factorialWithLoop(4));
-		System.out.println(recursive_1.gcdWithLoop(8, 6));
-				System.out.println(recursive_1.gcd(new int[]{20,16,8}));
-//
+//		System.out.println(recursive_1.gcdWithLoop(8, 6));
+//				System.out.println(recursive_1.gcd(new int[]{20,16,8}));
+		System.out.println(recursive_1.gcdArray(new int[]{20,16,8,24},0,4));
+
 	}
 }
