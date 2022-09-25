@@ -805,7 +805,7 @@
                         //     clearInterval(intervalF);
                         //     return;
                         // }
-                        // console.log(' ########## cnt = ',cnt);
+                        // console.log(' ########## cnt = ',cnt);// 42, Bongeunsa-ro 1-gil startSelectBot
                     }
                     function startSelectBot() {
                         var seatTable = document.getElementById('seatTable');
@@ -813,7 +813,7 @@
                         for (let i = 0; i < 22; i++) {
                             // console.log('startSelectBot');
                             // setTimeout(goAutoSelected, 500, trArr[i], i, 500);
-                            intervalFArr.push(setInterval(goAutoSelected, 100+(i*10), trArr[i], i));
+                            intervalFArr.push(setInterval(goAutoSelected, 10+(i*40), trArr[i], i));
                         }
                     }
 
