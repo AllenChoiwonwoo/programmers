@@ -82,8 +82,8 @@ input, select, textarea {
 	}
 
 	body {
-		background: #D4D9DD url("images/bg03.jpg");
-		color: #474f51;
+		/*background: #D4D9DD url("images/bg03.jpg");*/
+		color: #000000;
 		font-size: 13.5pt;
 		font-family: 'Yanone Kaffeesatz';
 		line-height: 1.85em;
@@ -99,7 +99,7 @@ input, select, textarea {
 	}
 
 	ul, ol, p, dl {
-		margin: 0 0 2em 0;
+		margin: 0 0 0.3em 0;
 	}
 
 	a {
@@ -1457,7 +1457,7 @@ input, select, textarea {
 
 	.bordered-feature-image {
 		display: block;
-		background: #fff url("images/bg04.png");
+		/*background: #fff url("images/bg04.png");*/
 		padding: 10px;
 		box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.15);
 		margin: 0 0 1.5em 0;
@@ -1511,7 +1511,7 @@ input, select, textarea {
 
 	#header {
 		position: relative;
-		background: #3B4346 url("images/bg01.jpg");
+		/*background: #3B4346 url("images/bg01.jpg");*/
 		border-bottom: solid 1px #272d30;
 		box-shadow: inset 0px -1px 0px 0px #51575a;
 		text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75);
@@ -1530,7 +1530,7 @@ input, select, textarea {
 		}
 
 			#header h1 a {
-				color: #fff;
+				color: #d70000;
 				text-decoration: none;
 			}
 
@@ -1581,31 +1581,31 @@ input, select, textarea {
 /* Features */
 
 	#features {
-		background: #353D40 url("images/bg02.jpg");
+		/*background: #353D40 url("images/bg02.jpg");*/
 		border-bottom: solid 1px #272e31;
 		padding: 45px 0 45px 0;
-		text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75);
-		color: #a0a8ab;
+		/*text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75);*/
+		color: #020202;
 	}
 
 		#features h2 {
 			font-size: 1.25em;
-			color: #fff;
+			color: #400000;
 			margin: 0 0 0.25em 0;
 		}
 
 		#features a {
-			color: #e0e8eb;
+			color: #383838;
 		}
 
 		#features strong {
-			color: #fff;
+			color: #990000;
 		}
 
 /* Content */
 
 	#content {
-		background: #f7f7f7 url("images/bg04.png");
+		/*background: #f7f7f7 url("images/bg04.png");*/
 		border-top: solid 1px #fff;
 		padding: 45px 0 45px 0;
 	}
@@ -1832,10 +1832,10 @@ input, select, textarea {
 				top: 0;
 				width: 100%;
 				z-index: 10001;
-				color: #fff;
-				background: url("images/bg04.jpg");
-				box-shadow: inset 0px -20px 70px 0px rgba(200, 220, 245, 0.1), inset 0px -1px 0px 0px rgba(255, 255, 255, 0.1), 0px 1px 7px 0px rgba(0, 0, 0, 0.6);
-				text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75);
+				color: #ff0000;
+				/*background: url("images/bg04.jpg");*/
+				/*box-shadow: inset 0px -20px 70px 0px rgba(200, 220, 245, 0.1), inset 0px -1px 0px 0px rgba(255, 255, 255, 0.1), 0px 1px 7px 0px rgba(0, 0, 0, 0.6);*/
+				/*text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75);*/
 			}
 
 				#titleBar .title {
@@ -1860,13 +1860,15 @@ input, select, textarea {
 						position: absolute;
 						top: 6px;
 						left: 6px;
-						color: #fff;
+						color: #8b0000;
 						background: rgba(255, 255, 255, 0.025);
+						border: #2a9a2a solid 1px;
 						box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.05), inset 0px -8px 10px 0px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
 						text-shadow: -1px -1px 1px black;
 						width: 49px;
 						height: 31px;
 						border-radius: 8px;
+						background-color: #ce1a00;
 					}
 
 					#titleBar .toggle:before {
@@ -1906,7 +1908,7 @@ input, select, textarea {
 				top: 0;
 				width: 275px;
 				z-index: 10002;
-				background: url("images/bg04.jpg");
+				/*background: url("images/bg04.jpg");*/
 				box-shadow: inset -1px 0px 0px 0px rgba(255, 255, 255, 0.25), inset -2px 0px 25px 0px rgba(0, 0, 0, 0.5);
 				text-shadow: -1px -1px 1px black;
 			}

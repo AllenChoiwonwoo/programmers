@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>달력 만들기</title>
+    <!--    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.0/echarts.min.js"
+            integrity="sha512-LYmkblt36DJsQPmCK+cK5A6Gp6uT7fLXQXAX0bMa763tf+DgiiH3+AwhcuGDAxM1SvlimjwKbkMPL3ZM1qLbag=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+<div id="main" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+    // Initialize the echarts instance based on the prepared dom
+    var myChart = echarts.init(document.getElementById('main'));
+    var data = [
+        {
+            "id": 6705,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "Unclassified brands",
+            "category": "(unknown)",
+            "revenue": 0.5,
+            "request": 187321,
+            "matched_request": 187321,
+            "click": 1,
+            "impression": 4892,
+            "fillrate": 0.01,
+            "ecpm": 2.61
+        },
+        {
+            "id": 4864,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "Netshoes",
+            "category": "Apparel",
+            "revenue": 0.54,
+            "request": 5685,
+            "matched_request": 5685,
+            "click": 11,
+            "impression": 5444,
+            "fillrate": 0.01,
+            "ecpm": 95.76
+        },
+        {
+            "id": 4881,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "Philip Morris International",
+            "category": "Arts & Entertainment",
+            "revenue": 0.14,
+            "request": 2019,
+            "matched_request": 2019,
+            "click": 0,
+            "impression": 1982,
+            "fillrate": 0.01,
+            "ecpm": 98.17
+        },
+        {
+            "id": 7170,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "AdWords small businesses",
+            "category": "Autos & Vehicles",
+            "revenue": 0.92,
+            "request": 9210,
+            "matched_request": 9210,
+            "click": 10,
+            "impression": 9051,
+            "fillrate": 0.01,
+            "ecpm": 98.27
+        },
+        {
+            "id": 768,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "Polishop",
+            "category": "Beauty & Personal Care",
+            "revenue": 0.07,
+            "request": 1098,
+            "matched_request": 1098,
+            "click": 1,
+            "impression": 1078,
+            "fillrate": 0.01,
+            "ecpm": 98.18
+        },
+        {
+            "id": 4608,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "AdWords small businesses",
+            "category": "Business & Industrial",
+            "revenue": 0.7000000000000001,
+            "request": 5658,
+            "matched_request": 5658,
+            "click": 1,
+            "impression": 5459,
+            "fillrate": 0.01,
+            "ecpm": 96.48
+        },
+        {
+            "id": 256,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "AdWords small businesses",
+            "category": "Computers & Consumer Electronics",
+            "revenue": 1.6300000000000001,
+            "request": 13152,
+            "matched_request": 13152,
+            "click": 4,
+            "impression": 12803,
+            "fillrate": 0.01,
+            "ecpm": 97.35000000000001
+        },
+        {
+            "id": 2582,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "AdWords small businesses",
+            "category": "Dining & Nightlife",
+            "revenue": 0.2,
+            "request": 1303,
+            "matched_request": 1303,
+            "click": 1,
+            "impression": 1276,
+            "fillrate": 0.02,
+            "ecpm": 97.93
+        },
+        {
+            "id": 6144,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "Amazon",
+            "category": "Family & Community",
+            "revenue": 0.03,
+            "request": 474,
+            "matched_request": 474,
+            "click": 0,
+            "impression": 458,
+            "fillrate": 0.01,
+            "ecpm": 96.62
+        },
+        {
+            "id": 4357,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "AdWords small businesses",
+            "category": "Finance",
+            "revenue": 0.73,
+            "request": 6726,
+            "matched_request": 6726,
+            "click": 0,
+            "impression": 6604,
+            "fillrate": 0.01,
+            "ecpm": 98.19
+        },
+        {
+            "id": 6912,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "Amazon",
+            "category": "Food & Groceries",
+            "revenue": 0.21,
+            "request": 2476,
+            "matched_request": 2476,
+            "click": 3,
+            "impression": 2399,
+            "fillrate": 0.01,
+            "ecpm": 96.89
+        },
+        {
+            "id": 2314,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "Vinden.nl",
+            "category": "Health",
+            "revenue": 0.52,
+            "request": 3748,
+            "matched_request": 3748,
+            "click": 3,
+            "impression": 3676,
+            "fillrate": 0.01,
+            "ecpm": 98.08
+        },
+        {
+            "id": 6914,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "Unclassified brands",
+            "category": "Hobbies& Games & Leisure",
+            "revenue": 0.05,
+            "request": 647,
+            "matched_request": 647,
+            "click": 1,
+            "impression": 613,
+            "fillrate": 0.01,
+            "ecpm": 94.74
+        },
+        {
+            "id": 7168,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "3 Day Blinds",
+            "category": "Home & Garden",
+            "revenue": 0.36,
+            "request": 3928,
+            "matched_request": 3928,
+            "click": 5,
+            "impression": 3847,
+            "fillrate": 0.01,
+            "ecpm": 97.94
+        },
+        {
+            "id": 769,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "AdWords small businesses",
+            "category": "Internet & Telecom",
+            "revenue": 0.5,
+            "request": 5367,
+            "matched_request": 5367,
+            "click": 5,
+            "impression": 5233,
+            "fillrate": 0.01,
+            "ecpm": 97.5
+        },
+        {
+            "id": 1536,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "Google",
+            "category": "Jobs & Education",
+            "revenue": 0.67,
+            "request": 6320,
+            "matched_request": 6320,
+            "click": 0,
+            "impression": 6193,
+            "fillrate": 0.01,
+            "ecpm": 97.99000000000001
+        },
+        {
+            "id": 7426,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "Conversant",
+            "category": "Law & Government",
+            "revenue": 0.08,
+            "request": 768,
+            "matched_request": 768,
+            "click": 0,
+            "impression": 757,
+            "fillrate": 0.01,
+            "ecpm": 98.57000000000001
+        },
+        {
+            "id": 7429,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "Unclassified brands",
+            "category": "Mobile Apps",
+            "revenue": 0.51,
+            "request": 39699,
+            "matched_request": 39699,
+            "click": 0,
+            "impression": 39019,
+            "fillrate": 0,
+            "ecpm": 98.29
+        },
+        {
+            "id": 2575,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "Conversant",
+            "category": "News& Books & Publications",
+            "revenue": 0.01,
+            "request": 413,
+            "matched_request": 413,
+            "click": 0,
+            "impression": 405,
+            "fillrate": 0,
+            "ecpm": 98.06
+        },
+        {
+            "id": 6181,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "AdWords small businesses",
+            "category": "Occasions & Gifts",
+            "revenue": 0.08,
+            "request": 635,
+            "matched_request": 635,
+            "click": 0,
+            "impression": 619,
+            "fillrate": 0.01,
+            "ecpm": 97.48
+        },
+        {
+            "id": 5638,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "Apartments.com",
+            "category": "Real Estate",
+            "revenue": 1.47,
+            "request": 13047,
+            "matched_request": 13047,
+            "click": 3,
+            "impression": 12844,
+            "fillrate": 0.01,
+            "ecpm": 98.44
+        },
+        {
+            "id": 4100,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "AdWords small businesses",
+            "category": "Sports & Fitness",
+            "revenue": 0.17,
+            "request": 2025,
+            "matched_request": 2025,
+            "click": 2,
+            "impression": 1956,
+            "fillrate": 0.01,
+            "ecpm": 96.59
+        },
+        {
+            "id": 7424,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "Fiji Airways",
+            "category": "Travel & Tourism",
+            "revenue": 0.8200000000000001,
+            "request": 7165,
+            "matched_request": 7165,
+            "click": 3,
+            "impression": 6991,
+            "fillrate": 0.01,
+            "ecpm": 97.57000000000001
+        },
+        {
+            "id": 7424,
+            "com_idx": 1593,
+            "site_idx": 2671,
+            "unit_name": "bemil_top_970x250",
+            "brand": "Fiji Airways",
+            "category": "ALL CATEGORYS",
+            "revenue": 10.91,
+            "request": 318884,
+            "matched_request": 318884,
+            "click": 54,
+            "impression": 133599,
+            "fillrate": 0.01,
+            "ecpm": 41.9
+        }
+    ];
+
+    // Specify the configuration items and data for the chart
+    const option = {
+        tooltip: {
+            show: true,
+            trigger: 'item',
+            // extraCssText: 'z-index: 10000',
+            // formatter: '{b}\n {c}\n {d}%',
+            borderColor: '#ffffff',
+            formatter: function (params) {
+                return `${params.name}  ${Number(params.data.value), 0} (${params.percent}%)<br />`;
+            },
+        },
+        legend: {
+            top: '5%',
+            left: 'center',
+        },
+        series: [
+            {
+                type: 'pie',
+                radius: ['30%', '70%'],
+                avoidLabelOverlap: false,
+                itemStyle: {
+                    borderRadius: 4,
+                    borderColor: '#fff',
+                    borderWidth: 1,
+                },
+                label: {
+                    position: 'inner',
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '20',
+                        fontWeight: 'bold',
+                    },
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)',
+                    },
+                },
+                labelLine: {
+                    show: false,
+                },
+                data: data?.map((value) => ({
+                    value: parseInt(value.value, 10),
+                    name: lang === 'ko' ? value.ctry : (value.country ? value.country : 'ETC'),
+                    color: value?.color,
+                }))
+                color: date.map((value) => (value?.color)),
+            },
+        ],
+    };
+
+    // Display the chart using the configuration items and data just specified.
+    myChart.setOption(option);
+</script>
+</body>
+</html>

@@ -9,7 +9,10 @@
     <title>Halcyonic by HTML5 UP</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="assets/css/main.css"/>
+<!--    <link rel="stylesheet" href="assets/css/main.css"/>-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
 </head>
 <body>
 <div id="page-wrapper">
@@ -176,138 +179,172 @@
     <!-- Features -->
     <section id="features">
         <div class="container">
-            <div class="row">
-                <div class="col-3 col-6-medium col-12-small">
+            <style>
 
-                    <!-- Feature #1 -->
-                    <section>
-                        <a href="./index2.html" class="bordered-feature-image"><img src="images/pic01.jpg" alt=""/></a>
-                        <h2>Interpar* 티켓팅 연습</h2>
-                        <p>
-                            This is <strong>Halcyonic</strong>, a free site template
-                            by <a href="http://twitter.com/ajlkn">AJ</a> for
-                            <a href="http://html5up.net">HTML5 UP</a>. It's responsive,
-                            built on HTML5 + CSS3, and includes 5 unique page layouts.
-                        </p>
-                    </section>
+
+                .wrapper {
+                    display: grid;
+                    /*grid-template-columns: repeat(9, 1fr);*/
+                    grid-template-columns: 300px minmax(300px,1fr) 350px;
+                    grid-template-rows: 50px 500px 50px 50px;
+                    grid-auto-rows: minmax(100px, auto);
+                    grid-template-areas:
+                          "name  name   date "
+                          "poster  info date "
+                          "poster  info ft   "
+                          "poster  info book ";
+                }
+
+                .wrapper > div {
+                    border: 2px solid #ffa94d;
+                    border-radius: 5px;
+                    background-color: #ffd8a8;
+                    padding: 1em;
+                    color: #d9480f;
+                }
+
+                /*button {*/
+                /*    list-style: none;*/
+                /*    position: relative;*/
+                /*    width: 50%;*/
+                /*    height: 3.5rem;*/
+                /*    font-size: 1rem;*/
+                /*    line-height: 3.3rem;*/
+                /*    border: 1px solid #dadee3;*/
+                /*    height: 50px;*/
+                /*    font-weight: bold;*/
+                /*    color: #ef3f43;*/
+                /*    border-color: #ef3f43;*/
+                /*    border-radius: 10px;*/
+                /*    vertical-align: baseline;*/
+                /*}*/
+                .name {
+                    grid-area: name;
+                    /*minmax(50px, 50px);*/
+                }
+
+                .footer {
+                    grid-area: ft;
+                }
+
+                .info {
+                    grid-area: info;
+                }
+
+                .poster {
+                    grid-area: poster;
+                }
+
+                .wrapper > div.date {
+                    grid-area: date;
+                    margin: 10px;
+                    border-radius: 14px;
+                }
+
+                .book {
+                    grid-area: book;
+                }
+
+                /*#calender{*/
+                /*    width: 100%;*/
+                /*    height: 100%;*/
+                /*    border: 1px solid #3e95ff;*/
+                /*    border-radius: 10px;*/
+                /*    background-color: #ffd8a8;*/
+
+                /*}*/
+                /*#calender .wrapper {*/
+                /*    display: grid;*/
+                /*    !*grid-template-columns: repeat(9, 1fr);*!*/
+                /*    grid-template-columns: 300px 1fr 350px;*/
+                /*    grid-template-rows: 50px 500px 50px 50px;*/
+                /*    grid-auto-rows: minmax(100px, auto);*/
+                /*    grid-template-areas:*/
+                /*          "sun  mon   date "*/
+                /*          "poster  info date "*/
+                /*          "poster  info ft   "*/
+                /*          "poster  info book ";*/
+                /*}*/
+
+            </style>
+
+            <div class="wrapper">
+                <div class="name">
+                    <p class="h2">BLACKPINK WORLD TOUR ［BORN PINK］SEOUL</p>
+                </div>
+                <div class="date">
+                    <p>
+                        관람일
+                    </p>
+                    <div id="calender">
+
+                    </div>
+                    <p>
+                        회차
+                    </p>
+                    <button type="button" class="btn btn-outline-danger">
+                        1회 18:00
+                    </button>
 
                 </div>
-                <div class="col-3 col-6-medium col-12-small">
-
-                    <!-- Feature #2 -->
-                    <section>
-                        <a href="#" class="bordered-feature-image"><img src="images/pic02.jpg" alt=""/></a>
-                        <h2>Responsive You Say?</h2>
-                        <p>
-                            Yes! Halcyonic is built to be fully responsive so it looks great
-                            at every screen size, from desktops to tablets to mobile phones.
-                        </p>
-                    </section>
-
+                <div class="poster">
+                    <img src="//ticketimage.interpark.com/Play/image/large/22/22010748_p.gif" alt="poster" width="290">
                 </div>
-                <div class="col-3 col-6-medium col-12-small">
+                <div class="info">info
+                    <table>
+                        <tr>
+                            <td>
+                                <p>장소</p>
+                            </td>
+                            <td>
+                                <p>서울 코엑스 아레나</p>
+                            </td>
 
-                    <!-- Feature #3 -->
-                    <section>
-                        <a href="#" class="bordered-feature-image"><img src="images/pic03.jpg" alt=""/></a>
-                        <h2>License Info</h2>
-                        <p>
-                            Halcyonic is licensed under the <a href="http://html5up.net/license">CCA</a> license,
-                            so use it for personal/commercial use as much as you like (just keep
-                            our credits intact).
-                        </p>
-                    </section>
-
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>공연시간</p>
+                            </td>
+                            <td>
+                                <p>19:00</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>관람연령</p>
+                            </td>
+                            <td>
+                                <p>전체관람가</p>
+                            </td>
+                        <tr>
+                            <td>
+                                <p>가격</p>
+                            </td>
+                            <td>
+                                <p>vip 200000원</p>
+                                <p>S 150000원</p>
+                                <p>R 100000원</p>
+                            </td>
+                        <tr>
+                            <td>
+                                <p>출연</p>
+                            </td>
+                            <td>
+                                <p>BLACKPINK</p>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="col-3 col-6-medium col-12-small">
-
-                    <!-- Feature #4 -->
-                    <section>
-                        <a href="#" class="bordered-feature-image"><img src="images/pic04.jpg" alt=""/></a>
-                        <h2>Volutpat etiam aliquam</h2>
-                        <p>
-                            Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed. Suspendisse
-                            eu varius nibh. Suspendisse vitae magna mollis.
-                        </p>
-                    </section>
-
+                <div class="footer">
+                    <button type="button" class="btn btn-danger">
+                        예메해기
+                    </button>
                 </div>
-                <div class="col-3 col-6-medium col-12-small">
-
-                    <!-- Feature #1 -->
-                    <section>
-                        <a href="#" class="bordered-feature-image"><img src="images/pic01.jpg" alt=""/></a>
-                        <h2>Welcome to Halcyonic</h2>
-                        <p>
-                            This is <strong>Halcyonic</strong>, a free site template
-                            by <a href="http://twitter.com/ajlkn">AJ</a> for
-                            <a href="http://html5up.net">HTML5 UP</a>. It's responsive,
-                            built on HTML5 + CSS3, and includes 5 unique page layouts.
-                        </p>
-                    </section>
-
-                </div>
-                <div class="col-3 col-6-medium col-12-small">
-
-                    <!-- Feature #1 -->
-                    <section>
-                        <a href="#" class="bordered-feature-image"><img src="images/pic01.jpg" alt=""/></a>
-                        <h2>Welcome to Halcyonic</h2>
-                        <p>
-                            This is <strong>Halcyonic</strong>, a free site template
-                            by <a href="http://twitter.com/ajlkn">AJ</a> for
-                            <a href="http://html5up.net">HTML5 UP</a>. It's responsive,
-                            built on HTML5 + CSS3, and includes 5 unique page layouts.
-                        </p>
-                    </section>
-
-                </div>
-                <div class="col-3 col-6-medium col-12-small">
-
-                    <!-- Feature #1 -->
-                    <section>
-                        <a href="#" class="bordered-feature-image"><img src="images/pic01.jpg" alt=""/></a>
-                        <h2>Welcome to Halcyonic</h2>
-                        <p>
-                            This is <strong>Halcyonic</strong>, a free site template
-                            by <a href="http://twitter.com/ajlkn">AJ</a> for
-                            <a href="http://html5up.net">HTML5 UP</a>. It's responsive,
-                            built on HTML5 + CSS3, and includes 5 unique page layouts.
-                        </p>
-                    </section>
-
-                </div>
-                <div class="col-3 col-6-medium col-12-small">
-
-                    <!-- Feature #1 -->
-                    <section>
-                        <a href="#" class="bordered-feature-image"><img src="images/pic01.jpg" alt=""/></a>
-                        <h2>Welcome to Halcyonic</h2>
-                        <p>
-                            This is <strong>Halcyonic</strong>, a free site template
-                            by <a href="http://twitter.com/ajlkn">AJ</a> for
-                            <a href="http://html5up.net">HTML5 UP</a>. It's responsive,
-                            built on HTML5 + CSS3, and includes 5 unique page layouts.
-                        </p>
-                    </section>
-
-                </div>
-                <div class="col-3 col-6-medium col-12-small">
-
-                    <!-- Feature #1 -->
-                    <section>
-                        <a href="#" class="bordered-feature-image"><img src="images/pic01.jpg" alt=""/></a>
-                        <h2>Welcome to Halcyonic</h2>
-                        <p>
-                            This is <strong>Halcyonic</strong>, a free site template
-                            by <a href="http://twitter.com/ajlkn">AJ</a> for
-                            <a href="http://html5up.net">HTML5 UP</a>. It's responsive,
-                            built on HTML5 + CSS3, and includes 5 unique page layouts.
-                        </p>
-                    </section>
-
-                </div>
+                <div class="book">book</div>
             </div>
+
+
+
         </div>
     </section>
 

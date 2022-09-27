@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Halcyonic by HTML5 UP</title>
+		<meta charset="utf-8" />
+<!--		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />-->
+<!--		<link rel="stylesheet" href="assets/css/main.css" />-->
+	</head>
+	<body>
+					<div id="banner">
+						<div class="container">
+							<style>
+								* {margin: 0;padding: 0;box-sizing: border-box;}
+								ul, li {list-style: none;}
+
+								[name="slide"]{display: block;}
+								.slidebox{max-width: 1000px; width: 100%; margin: 0 auto;}
+								.slidebox img{max-width: 100%;}
+								.slidebox .slideList {
+									white-space: nowrap;
+									font-size: 0;
+									overflow: hidden;
+								}
+								.slidebox .slideItem{
+									position: relative;
+									display: inline-block;
+									vertical-align: middle;
+									width: 100%;
+									transition: all .35s;
+								}
+								.slidebox .slideItem label{
+									position: absolute;
+									z-index: 1;
+									top: 50%;
+									transform: translateY(-50%);
+									padding: 20px;
+									boder-radius: 50%;
+									cursor: pointer;
+								}
+								.slidebox .slideItem div {
+									background-color: #8d9ca3;
+								}
+								label.left{
+									left: 20px;
+									background-color: blue;
+									background-position: center center;
+									background-size: 50%;
+									background-repeat: no-repeat;
+								}
+								label.right {
+									right: 20px;
+									background-color: red;
+									background-position: center center;
+									background-size: 50%;
+									background-repeat: no-repeat;
+
+								}
+								[id="slide01"]:checked ~ .slideList .slideItem {transform: translateX(0);}
+								[id="slide02"]:checked ~ .slideList .slideItem {transform: translateX(-100%);}
+								[id="slide03"]:checked ~ .slideList .slideItem {transform: translateX(-200%);}
+								[id="slide04"]:checked ~ .slideList .slideItem {transform: translateX(-300%);}
+								
+
+
+
+
+							</style>
+							<div class="slidebox">
+								<input type="radio" name="slide" id="slide01" checked>
+								<input type="radio" name="slide" id="slide02">
+								<input type="radio" name="slide" id="slide03">
+								<input type="radio" name="slide" id="slide04">
+								<ul class="slideList">
+									<li class="slideItem">
+										<div>
+											<label for="slide04" class="left"><p>allen</p></label>
+											<label for="slide02" class="right">︎︎►︎</label>
+											<a><img src="./images/slider-sample-1.jpeg"></a>
+										</div>
+									</li>
+									<li class="slideItem">
+										<div>
+											<label for="slide01" class="left">◀</label>
+											<label for="slide03" class="right">►︎</label>
+											<a><img src="./images/slider-sample-3.png"></a>
+										</div>
+									</li>
+									<li class="slideItem">
+										<div>
+											<label for="slide02" class="left">◀</label>
+											<label for="slide04" class="right">►︎</label>
+											<a><img src="./images/slider-sample-4.jpeg"></a>
+										</div>
+									</li>
+									<li class="slideItem">
+										<div>
+											<label for="slide03" class="left">◀</label>
+											<label for="slide01" class="right">►︎</label>
+											<a><img src="./images/slider-sample-5.jpg"></a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+		<!-- Scripts -->
+<!--			<script src="assets/js/jquery.min.js"></script>-->
+<!--			<script src="assets/js/browser.min.js"></script>-->
+<!--			<script src="assets/js/breakpoints.min.js"></script>-->
+<!--			<script src="assets/js/util.js"></script>-->
+<!--			<script src="assets/js/main.js"></script>-->
+
+	</body>
+</html>
