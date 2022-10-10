@@ -1935,10 +1935,12 @@
                     }
                 }
                 function goSeatSectionPage() {
+                    console.log(`pg1.html:1938 = goSeatSectionPage `);
                     document.getElementById('divSeatSectionSelector').style.display = 'block';
                     document.getElementById('divSeatSelector').style.display = 'none';
                 }
-                function selectDone() {
+                function selectDone(state) {
+                    console.log(`pg1.html:1943 =  selectDone `,state);
                     document.getElementById('divSeatSectionSelector').style.display = 'none';
                     document.getElementById('divSeatSelector').style.display = 'block';
                 }
@@ -1946,7 +1948,7 @@
 
                 $("#goSeatSectionPageBtn").click(goSeatSectionPage);
 
-                $("#selectDoneBtn").click(selectDone());
+                $("#selectDoneBtn").click(selectDone);
 
 
             </script>
