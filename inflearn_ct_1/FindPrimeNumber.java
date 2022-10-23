@@ -22,7 +22,6 @@ package inflearn_ct_1;
  *
  * @author allen
  * @version 1.0
- * @see
  * @since 지원하는 자바버전 (ex : 5+ 5이상)
  */
 public class FindPrimeNumber {
@@ -30,36 +29,22 @@ public class FindPrimeNumber {
 
 	public static void main(String[] args) {
 		FindPrimeNumber fpn = new FindPrimeNumber();
-		System.out.println(fpn.solution(2));
+		System.out.println(fpn.solution(1000));
 	}
 
-	private boolean solution(int val) {
-		int[] primeArr = new int[val];
-
-		// for문에서
-		/*
-		검증하고자 하는 수 n
-		검증
-			m = sqrt n
-			m 길이의 배열 선언
-			2~m 까지 반복하면서
-				n % idx == 0 break
-		 */
-
-		int valSqrt = (int) Math.ceil(Math.sqrt(val));
-		for (int j = 2; j <= valSqrt; j++) {
-			System.out.println(j <= valSqrt);
-			if (val % j == 0) {
-				return false;
+	private int solution(int val) {
+		int cnt = 0;
+		int[] primeArr = new int[val+1];
+		for (int i = 2; i < primeArr.length; i++) {
+			if (primeArr[i] == 0){
+				System.out.println("i = " + i);
+				cnt++;
+				for (int j = i; j < primeArr.length; j+=i) {
+					primeArr[j] = 1;
+//					System.out.println("j = " + j);
+				}
 			}
 		}
-		return true;
-
-//		StringBuilder sb = new StringBuilder();
-//		for (int a : primeArr) {
-//			sb.append(a).append(',');
-//		}
-//		System.out.println("sb.toString() = " + sb.toString());
-//		return 0;
+		return cnt;
 	}
 }
