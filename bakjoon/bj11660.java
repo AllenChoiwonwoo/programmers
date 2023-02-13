@@ -39,44 +39,41 @@ public class bj11660 {
 //		System.out.println("suNo = " + suNo);
 		int quizNo = Integer.parseInt(stringTokenizer.nextToken());
 //		System.out.println("quizNo = " + quizNo);
-		int[][] metrix = new int[suNo][suNo];
-		int yidx = 0;
+		int[][] metrix = new int[suNo+1][suNo+1];
 		for (int i = 0; i <  suNo ; i++) {
 			stringTokenizer = new StringTokenizer(br.readLine());
-			int xidx = 0;
 			for (int j = 0; j < suNo; j++) {
 				int input = Integer.parseInt(stringTokenizer.nextToken());
-				metrix[yidx][xidx] = input;
-				xidx++;
+				metrix[i+1][j+1] = input;
+//				System.out.print(" " +input);
 			}
-			yidx++;
+//			System.out.println();
+		}
+//		System.out.println(" = ");
+
+		int[][] sectionSum = new int[suNo + 1][suNo + 1];
+		for (int i = 1; i <= suNo; i++) {
+			for (int j = 1; j <= suNo; j++) {
+				sectionSum[i][j] = sectionSum[i][j-1] + sectionSum[i-1][j] - sectionSum[i-1][j-1] + metrix[i][j];
+			}
 		}
 
 		for (int i = 0; i < quizNo; i++) {
 			stringTokenizer = new StringTokenizer(br.readLine());
-			int x1 = Integer.parseInt(stringTokenizer.nextToken());
-			int y1 = Integer.parseInt(stringTokenizer.nextToken());
+			int x1 = Integer.parseInt(stringTokenizer.nextToken());//2
+			int y1 = Integer.parseInt(stringTokenizer.nextToken());//2
+			// print x1,y1 on metrix
+			System.out.println("x1 = " + x1 + " y1 = " + y1 + " metrix[x1][y1] = " + metrix[x1][y1]);
 
-			int x2 = Integer.parseInt(stringTokenizer.nextToken());
-			int y2 = Integer.parseInt(stringTokenizer.nextToken());
+			int x2 = Integer.parseInt(stringTokenizer.nextToken());//4
+			int y2 = Integer.parseInt(stringTokenizer.nextToken());//3
+			System.out.println("x2 = " + x2 + " y2 = " + y2 + " metrix[x2][y2] = " + metrix[x2][y2]);
 			int result = 0;
-			for (int j = y1-1; j < y2; j++){
-				for (int k = x1-1; k < x2; k++) {
-					result += metrix[j][k];
-				}
-			}
+//			result  = sectionSum[y2][x2] - sectionSum[y2][x1-1] - sectionSum[y1-1][x2] + sectionSum[x1-1][y1-1];
+			result  = sectionSum[x2][y2] - sectionSum[x1-1][y2] - sectionSum[x2][y1-1] + sectionSum[x1-1][y1-1];
+
 			System.out.println(result);
 
 		}
-		
-		
-		// metrix 이차원 배열을 출력
-//		for (int i = 0; i < suNo; i++) {
-//			for (int j = 0; j < suNo; j++) {
-//				System.out.print(metrix[i][j] + " ");
-//			}
-//			System.out.println();
-//		}
-
 	}
 }
