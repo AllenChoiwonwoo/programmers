@@ -45,32 +45,33 @@ public class bj2018 {
 			numbs[i] = i;
 		}
 		int answer =1;
-		int sum = 0;
-		while (target != start){
-			if (sum < target) {
-				sum += numbs[end]; // 1 2 3 4 5
-				end++;
-
-			}else if(sum > target){
-				sum -= numbs[start];
-				start++;
-
-			}else if(sum == target){
+		int sum = 1;
+		int harfline = target/2;
+		while (target != end ){
+			if(sum == target){
 				answer++;
-//				end++;
-				sum -= numbs[start];
-				start++;
-//				sum -= numbs[end];
+				end++;
+//				sum -= numbs[start];
+//				start++;
+				sum += end;
 //				System.out.println("   =>    answer : "+answer);
+			}else if(sum > target){
+				sum -= start;
+				start++;
+
+			}else if (sum < target) {
+				end++;
+				sum += end;
+
 			}
+			if (start > harfline) break;
 //			StringBuilder sb = new StringBuilder();
 //			for (int i = 1; i < target+1; i++) {
 //				if (i == start) sb.append("<<");
 //				sb.append(numbs[i]);
-//				if (i == end-1) sb.append(">>");
+//				if (i == end) sb.append(">>");
 //				sb.append(" ");
 //			}
-
 //			System.out.println("!bj2018:71 = " + sb.toString() + "    =>    sum : "+sum);
 //			sb.setLength(0);
 		}
@@ -78,6 +79,4 @@ public class bj2018 {
 		System.out.println(answer);
 
 	}
-	
-	
 }
