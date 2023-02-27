@@ -78,5 +78,14 @@ public class bj2018 {
 //		System.out.println("   =>    answer : "+answer);
 		System.out.println(answer);
 
+//		<script>
+//			var adopVastMap = [
+//				"https://pubads.g.doubleclick.net/gampad/ads?iu=/5932629,56555167/ca-video-pub-1474238860523410-tag/newsis_content_640x360-va-230221-1&description_url=https%3A%2F%2Fnewsis.com&tfcd=0&npa=0&sz=1x1%7C400x225%7C640x480%7C640x360%7C480x360%7C400x300&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=&vad_type=linear&ad_rule=1&vid_d=1200",
+//				"https://pubads.g.doubleclick.net/gampad/ads?iu=/5932629,56555167/ca-video-pub-1474238860523410-tag/newsis_content_640x360-va-230221-2&description_url=https%3A%2F%2Fnewsis.com&tfcd=0&npa=0&sz=1x1%7C400x225%7C640x480%7C640x360%7C480x360%7C400x300&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=&vad_type=linear&ad_rule=1&vid_d=1200",
+//				"https://pubads.g.doubleclick.net/gampad/ads?iu=/5932629,56555167/ca-video-pub-1474238860523410-tag/newsis_content_640x360-va-230221-3&description_url=https%3A%2F%2Fnewsis.com&tfcd=0&npa=0&sz=1x1%7C400x225%7C640x480%7C640x360%7C480x360%7C400x300&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=&vad_type=linear&ad_rule=1&vid_d=1200",
+//				"https://pubads.g.doubleclick.net/gampad/ads?iu=/5932629,56555167/ca-video-pub-1474238860523410-tag/newsis_content_640x360-va-230221-4&description_url=https%3A%2F%2Fnewsis.com&tfcd=0&npa=0&sz=1x1%7C400x225%7C640x480%7C640x360%7C480x360%7C400x300&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=&vad_type=linear&ad_rule=1&vid_d=1200"
+//		    ];
+//		</script>
+
 	}
 }
