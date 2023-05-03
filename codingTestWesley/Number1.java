@@ -26,6 +26,9 @@ package codingTestWesley;
  * @since 지원하는 자바버전 (ex : 5+ 5이상)
  */
 public class Number1 {
+	// 22 + 9 의 나머지는 (0)입니다.
+
+
 	public int solution(int n, int k) {
 		int answer = 1;
 		float value = Float.valueOf(n);
