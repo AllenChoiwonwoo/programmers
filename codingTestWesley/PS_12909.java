@@ -30,20 +30,27 @@ import java.util.Stack;
  */
 public class PS_12909 {
     public static boolean solution(String s){
-        char[] chars = s.toCharArray();
-        Stack<Integer> stack = new Stack<>();
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == '('){
-                stack.push(1);
-            } else if (chars[i] == ')') {
-                if (stack.size() > 0){
-                    stack.pop();
+        /*
+        stack 보다 int가 빠르지 않을까?
+         */
+        if (s.length()%2 == 1){
+            return false;
+        }
+        int index =0;
+        int stack = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '('){
+                stack++;;
+            } else if (s.charAt(i) == ')') {
+                if (stack > 0){
+                    stack--;
                 }else{
                     return false;
                 }
             }
+            index++;
         }
-        return stack.isEmpty();
+        return stack == 0;
     }
     public static void main(String[] args) {
         String s = "(()())";
