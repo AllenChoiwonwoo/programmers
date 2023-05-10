@@ -11,11 +11,8 @@
  * @since 지원하는 자바버전 (ex : 5+ 5이상)
  */
 
-import com.sun.org.apache.xalan.internal.xsltc.util.IntegerArray;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 

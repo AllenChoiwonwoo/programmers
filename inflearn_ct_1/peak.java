@@ -13,8 +13,6 @@
 
 package inflearn_ct_1;
 
-import com.ibm.jvm.j9.dump.extract.Main;
-
 /**
  * create on 2022/11/21.
  * create by IntelliJ IDEA.

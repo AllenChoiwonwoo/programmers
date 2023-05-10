@@ -13,7 +13,6 @@
 
 package kakao202209;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.IntArrayData;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
