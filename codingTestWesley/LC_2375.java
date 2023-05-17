@@ -34,7 +34,7 @@ public class LC_2375 {
         StringBuilder tmp = new StringBuilder();
 //        String pattern = "DDDIII"; // 1234567
 //        String pattern = "IIIDIDDD"; // 123456780
-        String pattern = "DDD"; //4321
+        String pattern = "IDIDIDID"; //123456789
         char[] chars = pattern.toCharArray();
 
         for (int i = 1; i <= chars.length+1; i++) {
@@ -47,15 +47,15 @@ public class LC_2375 {
         StringBuilder result = new StringBuilder();
         char prevType = ' ';
         int index = 0;
-//        System.out.println("porsions = " + porsions.size());
         for (int i = 0; i < porsions.size() ; i++) {
-//            System.out.println("!LC_2375:50 = " +porsions.get(i).toString());
+
             char type =porsions.get(i).type;
             int startIdx = porsions.get(i).startIdx;
             int endIdx = porsions.get(i).endIdx;
+            System.out.println("type = " + type+ " startIdx = " + startIdx + " endIdx = " + endIdx);
 
             if ('I' == type) {
-                if (startIdx + 1 < endIdx){
+                if (startIdx + 1 < endIdx || i == 0){
                     result.append(numbs.substring(startIdx, endIdx));
                 }
             }else if ('D' == type){
@@ -63,8 +63,11 @@ public class LC_2375 {
                 result.append(tmp.reverse());
             }
             tmp.setLength(0);
-//            System.out.println("!LC_2375:117 = "+ result.toString());
+            System.out.println("indresult.toString() = " + result.toString());
         }
+        System.out.println("indresult = " + result.toString());
+
+//        return result.toString();
     }
     public static List<Porsion> makePartList2(char[] chars){
         List<Porsion> porsions = new ArrayList<>();
@@ -84,9 +87,7 @@ public class LC_2375 {
                 if ('D' == prevChar) eIndex++;
                 porsions.add(new Porsion(prevChar, sIndex, eIndex));
                 sIndex = eIndex;
-
             }
-            int test = 0;
         }
         porsions.add(new Porsion(chars[sIndex], sIndex, chars.length+1));
         return porsions;
