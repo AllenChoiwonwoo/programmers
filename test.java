@@ -11,6 +11,15 @@
  * @since 지원하는 자바버전 (ex : 5+ 5이상)
  */
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeSet;
+
 /**
  * create on 2022/08/27.
  * create by IntelliJ IDEA.
@@ -23,13 +32,12 @@
  * @author allen
  * @since 지원하는 자바버전 (ex : 5+ 5이상)
  */
+
 public class test {
 	public static void main(String[] args) {
-		String a = "allentest";
-		String b = new String("allentest");
+//		TreeSet
+//		HashSet
+//		Quque
 
-		System.out.println("a == b = " + (a == b));
-		System.out.println("(a == b.intern()) = " + (a == b.intern()));
 	}
-	
 }
