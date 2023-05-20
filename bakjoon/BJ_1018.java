@@ -1,22 +1,8 @@
-/**
- * create on 2023/05/19.
- * create by IntelliJ IDEA.
- *
- * <p> 클래스 설명 </p>
- * <p> {@link } and {@link }관련 클래스 </p>
- *
- * @version 1.0
- * @author allen
- * @see
- * @since 지원하는 자바버전 (ex : 5+ 5이상)
- */
-
 package bakjoon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class BJ_1018 {
@@ -28,7 +14,7 @@ public class BJ_1018 {
     int[] whitePrefixSum;
     int[] blackPrefixSum;
 
-    int minCnt = 0;
+    int minCnt = Integer.MAX_VALUE;
     char[][] inputStrArr;
 
     public int solution() throws IOException {
@@ -41,7 +27,6 @@ public class BJ_1018 {
         BoardWithWhiteStart = new char[height][width];
         BoardWithBlackStart = new char[height][width];
 
-//        StringBuilder inputString = new StringBuilder();
         inputStrArr = new char[height][width];
         for (int i = 0; i < height; i++) {
             inputStrArr[i] = br.readLine().toCharArray();
@@ -68,6 +53,7 @@ public class BJ_1018 {
 //        int loopLimit = (width - 7) * (height - 7);
         widthLoop = width-7;
         heightLoop = height-7;
+        System.out.println("widthLoop = " + widthLoop+ ", heightLoop = " + heightLoop);
 
         whitePrefixSum = new int[widthLoop];
         blackPrefixSum = new int[widthLoop];
@@ -91,9 +77,9 @@ public class BJ_1018 {
                         blackPrefixSum[xn] += DiffBoardBlack[yn][xAdd] - DiffBoardBlack[yc][xSub];
                         addY++;
                     }
+                    System.out.println("white = %d, black = %d".formatted(whitePrefixSum[xn], blackPrefixSum[xn]));
                     minCnt = whitePrefixSum[xn] > minCnt ? minCnt : whitePrefixSum[xn];
                     minCnt = blackPrefixSum[xn] > minCnt ? minCnt : blackPrefixSum[xn];
-                    System.out.println("minCnt = " + minCnt);
                 }
             }
 
@@ -126,14 +112,19 @@ public class BJ_1018 {
             }
 
         }
-        minCnt = whiteSum > blackSum ? blackSum : whiteSum;
+//        minCnt = Math.min(minCnt, Math.min(whiteSum, blackSum));
+//        whitePrefixSum[0] = whiteSum;
+//        blackPrefixSum[0] = blackSum;
         whitePrefixSum[0] = whiteSum;
         blackPrefixSum[0] = blackSum;
+        minCnt = Math.min(minCnt, whiteSum);
+        minCnt = Math.min(minCnt, blackSum);
     }
 
     public static void main(String[] args) {
         try {
-            new BJ_1018().solution();
+            int result = new BJ_1018().solution();
+            System.out.println("result = " + result);
         } catch (IOException e) {
             System.out.println("IO Exception");
         }
