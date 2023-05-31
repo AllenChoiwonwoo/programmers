@@ -28,6 +28,7 @@ import java.util.List;
  * @version 1.0
  * @author allen
  * @since 지원하는 자바버전 (ex : 5+ 5이상)
+ * 이중우선순위큐
  */
 public class PS_42628 {
 

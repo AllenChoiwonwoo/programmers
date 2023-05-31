@@ -1,133 +1,83 @@
 package bakjoon;
-
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
+import java.io.IOException;
 
 public class BJ_1018 {
 
-    char[][] BoardWithWhiteStart;
-    char[][] BoardWithBlackStart;
-    int widthLoop;
-    int heightLoop;
-    int[] whitePrefixSum;
-    int[] blackPrefixSum;
+    public static boolean[][] arr;
+    public static int min = 64;
 
-    int minCnt = Integer.MAX_VALUE;
-    char[][] inputStrArr;
+    public static void main(String[] args) throws IOException {
 
-    public int solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        StringTokenizer dimensions = new StringTokenizer(br.readLine());
-        int height = Integer.parseInt(dimensions.nextToken());
-        int width = Integer.parseInt(dimensions.nextToken());
-        String ref = "WBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBWBW";
-        BoardWithWhiteStart = new char[height][width];
-        BoardWithBlackStart = new char[height][width];
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        inputStrArr = new char[height][width];
-        for (int i = 0; i < height; i++) {
-            inputStrArr[i] = br.readLine().toCharArray();
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
 
-            if ((i+1) % 2 == 1){
-                BoardWithWhiteStart[i] = ref.substring(0,width).toCharArray();
-                BoardWithBlackStart[i] = ref.substring(1,width+1).toCharArray();
-            }else{
-                BoardWithWhiteStart[i] = ref.substring(1,width+1).toCharArray();
-                BoardWithBlackStart[i] = ref.substring(0,width).toCharArray();
-            }
-        }
-        int[][] DiffBoardWhite = new int[height][width];
-        int[][] DiffBoardBlack = new int[height][width];
+        arr = new boolean[N][M];
 
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
-                DiffBoardWhite[y][x] = BoardWithWhiteStart[y][x] == inputStrArr[y][x] ? 0 : 1;
-                DiffBoardBlack[y][x] = BoardWithBlackStart[y][x] == inputStrArr[y][x] ? 0 : 1;
-            }
-        }
+        // 배열 입력
+        for (int i = 0; i < N; i++) {
+            String str = br.readLine();
 
-
-//        int loopLimit = (width - 7) * (height - 7);
-        widthLoop = width-7;
-        heightLoop = height-7;
-        System.out.println("widthLoop = " + widthLoop+ ", heightLoop = " + heightLoop);
-
-        whitePrefixSum = new int[widthLoop];
-        blackPrefixSum = new int[widthLoop];
-
-
-
-        for (int yn = 0; yn < heightLoop; yn++) {
-            for (int xn = 0; xn < widthLoop; xn++) {
-                int addY = 0;
-                if (xn == 0){ // 초기 셋팅
-                    setFirstBoard();
-                    addY++;
-                }else{ // 제거된 값만크만 빼고 ,추가된 부분 만큰만 더한다
-                    whitePrefixSum[xn] =whitePrefixSum[xn -1];
-                    blackPrefixSum[xn] =blackPrefixSum[xn -1];
-                    while (addY <= 7){
-                        int yc = yn + addY;
-                        int xAdd = xn+7;
-                        int xSub = xn-1;
-                        whitePrefixSum[xn] += DiffBoardWhite[yc][xAdd] - DiffBoardWhite[yc][xSub];
-                        blackPrefixSum[xn] += DiffBoardBlack[yn][xAdd] - DiffBoardBlack[yc][xSub];
-                        addY++;
-                    }
-                    System.out.println("white = %d, black = %d".formatted(whitePrefixSum[xn], blackPrefixSum[xn]));
-                    minCnt = whitePrefixSum[xn] > minCnt ? minCnt : whitePrefixSum[xn];
-                    minCnt = blackPrefixSum[xn] > minCnt ? minCnt : blackPrefixSum[xn];
+            for (int j = 0; j < M; j++) {
+                if (str.charAt(j) == 'W') {
+                    arr[i][j] = true; // W일 때는 true
+                } else {
+                    arr[i][j] = false; // B일 때는 false
                 }
-            }
 
-            //whitePrefixSum 중 최소값 찾기
-
-            if (yn == heightLoop -1) break;
-            for (int i = 0; i < 8; i++) {
-                int yc = yn + 8;
-                whitePrefixSum[0] += DiffBoardWhite[yc][i] - DiffBoardWhite[yn][i];
-                blackPrefixSum[0] += DiffBoardBlack[yc][i] - DiffBoardBlack[yn][i];
             }
-            minCnt = whitePrefixSum[0] > minCnt ? minCnt : whitePrefixSum[0];
-            minCnt = blackPrefixSum[0] > minCnt ? minCnt : blackPrefixSum[0];
         }
 
+        int N_row = N - 7;
+        int M_col = M - 7;
 
-        return minCnt;
-    }
-    public void setFirstBoard() {
-        int whiteSum = 0;
-        int blackSum = 0;
-        for (int y = 0; y < 8; y++) {
-            for (int x = 0; x < 8; x++) {
-                if (inputStrArr[y][x] != BoardWithWhiteStart[y][x]){
-                    whiteSum++;
-                }
-                if (inputStrArr[y][x] != BoardWithBlackStart[y][x]){
-                    blackSum++;
-                }
+        for (int i = 0; i < N_row; i++) {
+            for (int j = 0; j < M_col; j++) {
+                find(i, j);
             }
-
         }
-//        minCnt = Math.min(minCnt, Math.min(whiteSum, blackSum));
-//        whitePrefixSum[0] = whiteSum;
-//        blackPrefixSum[0] = blackSum;
-        whitePrefixSum[0] = whiteSum;
-        blackPrefixSum[0] = blackSum;
-        minCnt = Math.min(minCnt, whiteSum);
-        minCnt = Math.min(minCnt, blackSum);
+        System.out.println(min);
     }
 
-    public static void main(String[] args) {
-        try {
-            int result = new BJ_1018().solution();
-            System.out.println("result = " + result);
-        } catch (IOException e) {
-            System.out.println("IO Exception");
+    public static void find(int x, int y) {
+        int end_x = x + 8;
+        int end_y = y + 8;
+        int count = 0;
+
+        boolean TF = arr[x][y]; // 첫 번째 칸의 색
+
+        for (int i = x; i < end_x; i++) {
+            for (int j = y; j < end_y; j++) {
+
+                // 올바른 색이 아닐 경우 count 1 증가
+                if (arr[i][j] != TF) {
+                    count++;
+                }
+
+                /*
+                 * 다음 칸은 색이 바뀌므로 true라면 false로, false 라면 true 로 값을 변경한다.
+                 */
+                TF = (!TF);
+            }
+
+            TF = !TF;
         }
 
+        /*
+         * 첫 번째 칸을 기준으로 할 때의 색칠 할 개수(count)와 첫 번째 칸의 색의 반대되는 색을 기준으로 할 때의
+         * 색칠 할 개수(64 - count) 중 최솟값을 count 에 저장
+         */
+        count = Math.min(count, 64 - count);
+
+        /*
+         * 이전까지의 경우 중 최솟값보다 현재 count 값이 더 작을 경우 최솟값을 갱신
+         */
+        min = Math.min(min, count);
     }
 }
