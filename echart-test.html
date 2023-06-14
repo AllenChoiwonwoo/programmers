@@ -1,437 +1,177 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>달력 만들기</title>
-    <!--    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.0/echarts.min.js"
-            integrity="sha512-LYmkblt36DJsQPmCK+cK5A6Gp6uT7fLXQXAX0bMa763tf+DgiiH3+AwhcuGDAxM1SvlimjwKbkMPL3ZM1qLbag=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</head>
-<body>
-<div id="main" style="width: 600px;height:400px;"></div>
-<script type="text/javascript">
-    // Initialize the echarts instance based on the prepared dom
-    var myChart = echarts.init(document.getElementById('main'));
-    var data = [
-        {
-            "id": 6705,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "Unclassified brands",
-            "category": "(unknown)",
-            "revenue": 0.5,
-            "request": 187321,
-            "matched_request": 187321,
-            "click": 1,
-            "impression": 4892,
-            "fillrate": 0.01,
-            "ecpm": 2.61
-        },
-        {
-            "id": 4864,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "Netshoes",
-            "category": "Apparel",
-            "revenue": 0.54,
-            "request": 5685,
-            "matched_request": 5685,
-            "click": 11,
-            "impression": 5444,
-            "fillrate": 0.01,
-            "ecpm": 95.76
-        },
-        {
-            "id": 4881,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "Philip Morris International",
-            "category": "Arts & Entertainment",
-            "revenue": 0.14,
-            "request": 2019,
-            "matched_request": 2019,
-            "click": 0,
-            "impression": 1982,
-            "fillrate": 0.01,
-            "ecpm": 98.17
-        },
-        {
-            "id": 7170,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "AdWords small businesses",
-            "category": "Autos & Vehicles",
-            "revenue": 0.92,
-            "request": 9210,
-            "matched_request": 9210,
-            "click": 10,
-            "impression": 9051,
-            "fillrate": 0.01,
-            "ecpm": 98.27
-        },
-        {
-            "id": 768,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "Polishop",
-            "category": "Beauty & Personal Care",
-            "revenue": 0.07,
-            "request": 1098,
-            "matched_request": 1098,
-            "click": 1,
-            "impression": 1078,
-            "fillrate": 0.01,
-            "ecpm": 98.18
-        },
-        {
-            "id": 4608,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "AdWords small businesses",
-            "category": "Business & Industrial",
-            "revenue": 0.7000000000000001,
-            "request": 5658,
-            "matched_request": 5658,
-            "click": 1,
-            "impression": 5459,
-            "fillrate": 0.01,
-            "ecpm": 96.48
-        },
-        {
-            "id": 256,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "AdWords small businesses",
-            "category": "Computers & Consumer Electronics",
-            "revenue": 1.6300000000000001,
-            "request": 13152,
-            "matched_request": 13152,
-            "click": 4,
-            "impression": 12803,
-            "fillrate": 0.01,
-            "ecpm": 97.35000000000001
-        },
-        {
-            "id": 2582,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "AdWords small businesses",
-            "category": "Dining & Nightlife",
-            "revenue": 0.2,
-            "request": 1303,
-            "matched_request": 1303,
-            "click": 1,
-            "impression": 1276,
-            "fillrate": 0.02,
-            "ecpm": 97.93
-        },
-        {
-            "id": 6144,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "Amazon",
-            "category": "Family & Community",
-            "revenue": 0.03,
-            "request": 474,
-            "matched_request": 474,
-            "click": 0,
-            "impression": 458,
-            "fillrate": 0.01,
-            "ecpm": 96.62
-        },
-        {
-            "id": 4357,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "AdWords small businesses",
-            "category": "Finance",
-            "revenue": 0.73,
-            "request": 6726,
-            "matched_request": 6726,
-            "click": 0,
-            "impression": 6604,
-            "fillrate": 0.01,
-            "ecpm": 98.19
-        },
-        {
-            "id": 6912,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "Amazon",
-            "category": "Food & Groceries",
-            "revenue": 0.21,
-            "request": 2476,
-            "matched_request": 2476,
-            "click": 3,
-            "impression": 2399,
-            "fillrate": 0.01,
-            "ecpm": 96.89
-        },
-        {
-            "id": 2314,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "Vinden.nl",
-            "category": "Health",
-            "revenue": 0.52,
-            "request": 3748,
-            "matched_request": 3748,
-            "click": 3,
-            "impression": 3676,
-            "fillrate": 0.01,
-            "ecpm": 98.08
-        },
-        {
-            "id": 6914,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "Unclassified brands",
-            "category": "Hobbies& Games & Leisure",
-            "revenue": 0.05,
-            "request": 647,
-            "matched_request": 647,
-            "click": 1,
-            "impression": 613,
-            "fillrate": 0.01,
-            "ecpm": 94.74
-        },
-        {
-            "id": 7168,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "3 Day Blinds",
-            "category": "Home & Garden",
-            "revenue": 0.36,
-            "request": 3928,
-            "matched_request": 3928,
-            "click": 5,
-            "impression": 3847,
-            "fillrate": 0.01,
-            "ecpm": 97.94
-        },
-        {
-            "id": 769,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "AdWords small businesses",
-            "category": "Internet & Telecom",
-            "revenue": 0.5,
-            "request": 5367,
-            "matched_request": 5367,
-            "click": 5,
-            "impression": 5233,
-            "fillrate": 0.01,
-            "ecpm": 97.5
-        },
-        {
-            "id": 1536,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "Google",
-            "category": "Jobs & Education",
-            "revenue": 0.67,
-            "request": 6320,
-            "matched_request": 6320,
-            "click": 0,
-            "impression": 6193,
-            "fillrate": 0.01,
-            "ecpm": 97.99000000000001
-        },
-        {
-            "id": 7426,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "Conversant",
-            "category": "Law & Government",
-            "revenue": 0.08,
-            "request": 768,
-            "matched_request": 768,
-            "click": 0,
-            "impression": 757,
-            "fillrate": 0.01,
-            "ecpm": 98.57000000000001
-        },
-        {
-            "id": 7429,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "Unclassified brands",
-            "category": "Mobile Apps",
-            "revenue": 0.51,
-            "request": 39699,
-            "matched_request": 39699,
-            "click": 0,
-            "impression": 39019,
-            "fillrate": 0,
-            "ecpm": 98.29
-        },
-        {
-            "id": 2575,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "Conversant",
-            "category": "News& Books & Publications",
-            "revenue": 0.01,
-            "request": 413,
-            "matched_request": 413,
-            "click": 0,
-            "impression": 405,
-            "fillrate": 0,
-            "ecpm": 98.06
-        },
-        {
-            "id": 6181,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "AdWords small businesses",
-            "category": "Occasions & Gifts",
-            "revenue": 0.08,
-            "request": 635,
-            "matched_request": 635,
-            "click": 0,
-            "impression": 619,
-            "fillrate": 0.01,
-            "ecpm": 97.48
-        },
-        {
-            "id": 5638,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "Apartments.com",
-            "category": "Real Estate",
-            "revenue": 1.47,
-            "request": 13047,
-            "matched_request": 13047,
-            "click": 3,
-            "impression": 12844,
-            "fillrate": 0.01,
-            "ecpm": 98.44
-        },
-        {
-            "id": 4100,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "AdWords small businesses",
-            "category": "Sports & Fitness",
-            "revenue": 0.17,
-            "request": 2025,
-            "matched_request": 2025,
-            "click": 2,
-            "impression": 1956,
-            "fillrate": 0.01,
-            "ecpm": 96.59
-        },
-        {
-            "id": 7424,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "Fiji Airways",
-            "category": "Travel & Tourism",
-            "revenue": 0.8200000000000001,
-            "request": 7165,
-            "matched_request": 7165,
-            "click": 3,
-            "impression": 6991,
-            "fillrate": 0.01,
-            "ecpm": 97.57000000000001
-        },
-        {
-            "id": 7424,
-            "com_idx": 1593,
-            "site_idx": 2671,
-            "unit_name": "bemil_top_970x250",
-            "brand": "Fiji Airways",
-            "category": "ALL CATEGORYS",
-            "revenue": 10.91,
-            "request": 318884,
-            "matched_request": 318884,
-            "click": 54,
-            "impression": 133599,
-            "fillrate": 0.01,
-            "ecpm": 41.9
-        }
-    ];
+<style>
+    .opggtalk-btn {
+        width: 70px;
+        height: 25px;
+        background-size: cover;
+    }
 
-    // Specify the configuration items and data for the chart
-    const option = {
-        tooltip: {
-            show: true,
-            trigger: 'item',
-            // extraCssText: 'z-index: 10000',
-            // formatter: '{b}\n {c}\n {d}%',
-            borderColor: '#ffffff',
-            formatter: function (params) {
-                return `${params.name}  ${Number(params.data.value), 0} (${params.percent}%)<br />`;
-            },
-        },
-        legend: {
-            top: '5%',
-            left: 'center',
-        },
-        series: [
-            {
-                type: 'pie',
-                radius: ['30%', '70%'],
-                avoidLabelOverlap: false,
-                itemStyle: {
-                    borderRadius: 4,
-                    borderColor: '#fff',
-                    borderWidth: 1,
-                },
-                label: {
-                    position: 'inner',
-                },
-                emphasis: {
-                    label: {
-                        show: true,
-                        fontSize: '20',
-                        fontWeight: 'bold',
-                    },
-                    itemStyle: {
-                        shadowBlur: 10,
-                        shadowOffsetX: 0,
-                        shadowColor: 'rgba(0, 0, 0, 0.5)',
-                    },
-                },
-                labelLine: {
-                    show: false,
-                },
-                data: data?.map((value) => ({
-                    value: parseInt(value.value, 10),
-                    name: lang === 'ko' ? value.ctry : (value.country ? value.country : 'ETC'),
-                    color: value?.color,
-                }))
-                color: date.map((value) => (value?.color)),
-            },
-        ],
-    };
+    .opggtalk-text {
+        background-color: #0b000a40;
+        color: white;
+        text-align: center;
+        padding-top: 1px;
+        font-size: 10px;
+    }
+</style>
+<div style="width: 300px;height: 250px;">
+    <div id="opggContents" style="width: 300px; height: 30px; background-color: #101010">
+        <table>
+            <tr>
+                <td>
+                    <div className="opggtalk-btn"
+                         style=" background-image: url('https://talk.op.gg/images/game/bg_lol.jpg');">
+                        <div className="opggtalk-btn opggtalk-text"
+                             onClick="window.open('https://talk.op.gg/s/lol/all?sort=popular', 'window_name', 'width=1000, height=800, location=no, status=no, scrollbars=yes');">
+                            리그오브<br>레전드
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div className="opggtalk-btn"
+                         style="background-image: url('https://talk.op.gg/images/game/bg_pubg.jpg');">
+                        <div className="opggtalk-btn opggtalk-text"
+                             onClick="window.open('https://talk.op.gg/s/pubg/all?sort=popular', 'window_name', 'width=1000, height=800, location=no, status=no, scrollbars=yes');">
+                            배틀그라운드
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div className="opggtalk-btn"
+                         style="background-image: url('https://talk.op.gg/images/game/bg_ow.jpg');">
+                        <div className="opggtalk-btn opggtalk-text"
+                             onClick="window.open('https://talk.op.gg/s/ow/all?sort=popular', 'window_name', 'width=1000, height=800, location=no, status=no, scrollbars=yes');">
+                            오버워치
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div className="opggtalk-btn"
+                         style="background-image: url('https://talk.op.gg/images/game/bg_r6.jpg');">
+                        <div className="opggtalk-btn opggtalk-text"
+                             onClick="window.open('https://talk.op.gg/s/r6/all?sort=popular', 'window_name', 'width=1000, height=800, location=no, status=no, scrollbars=yes');">
+                            레인보우<br>식스시즈
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="gamArea" name='Gam360_mfresh'
+         style="text-align:center;width: 300px; height: 220px;background-color: black">
+        <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+        <script>
+            var isLazyLoad = 'N';
+            var isRefresh = 'Y';
 
-    // Display the chart using the configuration items and data just specified.
-    myChart.setOption(option);
-</script>
-</body>
-</html>
+            var countLimit = isRefresh === 'Y' ? 4 : 1;
+            var lazyLoad_fetchMarginPercent = 20;
+            var lazyLoad_renderMarginPercent = 10;
+            var intervelTime = 120; // refresh 주기 (초)
+            var isCheckViewablity = true; // 뷰어빌리티 체크 안할경우 false 로 변경
+            var view = 0;
+            var gamTime = 0;
+            var count = 0;
+            var isIntersectionObserverSet = false;
+            var timer = 0;
+            // var isViewable = false;
+            var noAdCnt = 0;
+            var isFirstReq = true;
+            var adoptagdfp = "ZXZhbChmdW5jdGlvbihwLGEsYyxrLGUsZCl7ZT1mdW5jdGlvbihjKXtyZXR1cm4oYzxhPycnOmUocGFyc2VJbnQoYy9hKSkpKygoYz1jJWEpPjM1P1N0cmluZy5mcm9tQ2hhckNvZGUoYysyOSk6Yy50b1N0cmluZygzNikpfTtpZighJycucmVwbGFjZSgvXi8sU3RyaW5nKSl7d2hpbGUoYy0tKXtkW2UoYyldPWtbY118fGUoYyl9az1bZnVuY3Rpb24oZSl7cmV0dXJuIGRbZV19XTtlPWZ1bmN0aW9uKCl7cmV0dXJuJ1xcdysnfTtjPTF9O3doaWxlKGMtLSl7aWYoa1tjXSl7cD1wLnJlcGxhY2UobmV3IFJlZ0V4cCgnXFxiJytlKGMpKydcXGInLCdnJyksa1tjXSl9fXJldHVybiBwfSgnNCA1PTV8fHt9OzUubD01Lmx8fFtdOzQgbT1tfHxDKGMsZCxnLGIpezQgZj0hMCxoPSIvL0IuRi5vL3EvIitiLGU9IkgiK2kuQSh5KmkuRCgpKSsxOy0xIT1iLkcoIi8vIikmJihmPSExKTs0IGE9My5FKCJ4Iik7YS4yKCJ3IixlKTthLjIoInAiLCJuIik7YS4yKCJyIiwwKTthLjIoInMiLDApO2EuMigidiIsMCk7YS4yKCJ1IiwwKTthLjIoInQiLDApO2EuMigieiIsZCk7YS4yKCJaIixnKTthLjIoIlgiLCJJIik7ZD0iPDkgaz1cJyIraCsiXCc+Vi85PiI7aihjPTMuNihjKSl7VShjLjIoIlkiLCJXIik7Yy5TKCk7KWMuTShjLlQpO2MuTChhKX1LIDggNztqKCJKIj09Yik4IDc7Zj8oYT0zLjYoZSksYj1hLk58fGEuTy4zLDchPWImJihiLlIoKSxiLlEoZCksYi5QKCkpKTooYT0zLjYoZSksYS5rPWIpfTsnLDYyLDYyLCd8fHNldEF0dHJpYnV0ZXxkb2N1bWVudHx2YXJ8Z29vZ2xldGFnfGdldEVsZW1lbnRCeUlkfG51bGx8cmV0dXJufHNjcmlwdHx8fHx8fHx8fE1hdGh8aWZ8c3JjfGNtZHxhZG9wQURzaG93fG5vbmV8Y2N8Ym9yZGVyfFJFfGZyYW1lQm9yZGVyfG1hcmdpbldpZHRofHBhZGRpbmdIZWlnaHR8cGFkZGluZ1dpZHRofG1hcmdpbkhlaWdodHxpZHxJRlJBTUV8MUU0fHdpZHRofGZsb29yfGNvbXBhc3N8ZnVuY3Rpb258cmFuZG9tfGNyZWF0ZUVsZW1lbnR8YWRvcHxpbmRleE9mfGFkb3BCfG5vfEFET1BfUEJVfGVsc2V8YXBwZW5kQ2hpbGR8cmVtb3ZlQ2hpbGR8Y29udGVudERvY3VtZW50fGNvbnRlbnRXaW5kb3d8Y2xvc2V8d3JpdGV8b3BlbnxoYXNDaGlsZE5vZGVzfGZpcnN0Q2hpbGR8Zm9yfDx8YWRzYnlhZG9wX3xzY3JvbGxpbmd8Y2xhc3N8aGVpZ2h0Jy5zcGxpdCgnfCcpLDAse30pKTs="
+            eval(atob(adoptagdfp));
+        </script>
+        <script>
+            var adopAdunitList = ['enl_opgg_rt_300x250-230526-test1', 'enl_opgg_rt_300x250-230509-test2', 'enl_opgg_rt_300x250-230612-test3'];
+            const ramdomNumber = Math.random();
+            let unitName = '';
+            if (ramdomNumber > 0.66) {
+                unitName = adopAdunitList[0];
+            } else if ( ramdomNumber > 0.33) {
+                unitName = adopAdunitList[1];
+            }else{
+                unitName = adopAdunitList[2];
+            }
+            // unitName = 'enl_opgg_rt_300x250-230509-test';
+            console.log(unitName);
+
+            googletag.cmd.push(function () {
+                googletag.defineSlot('/5932629,114726905/ca-pub-1474238860523410-tag/' + unitName, [[300, 250], [300, 200], [200, 200], [300, 150], [300, 100], [300, 50], [180, 150]], 'div-apt-ad-tZjyjPzFtm').addService(googletag.pubads());
+                if (isLazyLoad && isLazyLoad === 'Y') {
+                    googletag.pubads().enableLazyLoad({
+                        fetchMarginPercent: lazyLoad_fetchMarginPercent,
+                        renderMarginPercent: lazyLoad_renderMarginPercent,
+                        mobileScaling: 1.0
+                    });
+                }
+                googletag.pubads().addEventListener('slotRequested', function (event) {
+                    console.log('g REQ');
+
+                    try {
+                        if (!isIntersectionObserverSet) {
+                            isIntersectionObserverSet = true;
+                            timer = setInterval(gamTimeTracker, 1000);
+                        }
+                    } catch (e) {
+                        console.log('ERROR : Can not use IntersectionObserver ', e);
+                    }
+                });
+                googletag.pubads().addEventListener('slotOnload', function (event) {
+                    console.log('g IMP');
+                });
+                googletag.pubads().enableSingleRequest();
+                googletag.pubads().set("page_url", "talk.op.gg");
+                googletag.pubads().addEventListener('slotRenderEnded', function (event) {
+                    count++;
+                    if (event.isEmpty) noAdCnt++;
+                    if (event.isEmpty && isFirstReq == true) {
+                        isFirstReq = false;
+                        console.log('360 pb');
+                        document.getElementById('gamArea').style.backgroundColor = 'white';
+                        adopADshow('div-apt-ad-tZjyjPzFtm', 300, 250, '45f0371c-0418-48bf-a589-909e5a146187');
+                        document.getElementById('opggContents').style.display = 'none';
+                    } else {
+                        isFirstReq = false;
+                        //console.log('gam 광고 있음');
+                    }
+                });
+                googletag.pubads().addEventListener('slotVisibilityChanged', function (adopSlot) {
+                    view = adopSlot.inViewPercentage;
+                    console.log('slotVisibilityChanged view=', view);
+                });
+                googletag.enableServices();
+            });
+            var gamTimeTracker = function () {
+                gamTime++;
+                if (count >= countLimit || noAdCnt >= 2) {
+                    clearInterval(timer);
+                    return;
+                }
+                if (gamTime >= intervelTime) {
+                    if (isCheckViewablity) {
+                        if (view > 20) {
+                            gamRefresh();
+                        }
+                    } else {
+                        gamRefresh();
+                    }
+                }
+            }
+
+            function gamRefresh() {
+                gamTime = 0;
+                if (count >= countLimit) {
+                    clearInterval(timer);
+                    return;
+                }
+                googletag.pubads().refresh();
+            }
+        </script>
+        <!-- /5932629,114726905/ca-pub-1474238860523410-tag/enl_opgg_rt_300x250-230307-test -->
+        <div id='div-apt-ad-tZjyjPzFtm'>
+            <script>
+                googletag.cmd.push(function () {
+                    googletag.display('div-apt-ad-tZjyjPzFtm');
+                });
+            </script>
+        </div>
+    </div>
+</div>
