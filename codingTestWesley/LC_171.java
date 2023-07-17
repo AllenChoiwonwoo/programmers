@@ -51,6 +51,5 @@ public class LC_171 {
             result += tmp * charCode;
         }
         System.out.println("result = " + result);
-
     }
 }
